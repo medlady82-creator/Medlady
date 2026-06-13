@@ -349,10 +349,37 @@ h2 {
   background: rgba(255, 255, 255, 0.74);
 }
 
+.action-card,
+.detail-grid a,
+.scenario-list a,
+.scenario-page-grid article {
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.action-card:hover,
+.detail-grid a:hover,
+.scenario-list a:hover,
+.scenario-page-grid article:hover {
+  transform: translateY(-3px);
+  border-color: rgba(30, 140, 255, 0.38);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 18px 42px rgba(30, 140, 255, 0.12);
+}
+
 .primary-tech {
   color: #fff;
   background:
     linear-gradient(145deg, rgba(11, 31, 58, 0.96), rgba(14, 70, 126, 0.92)),
+    var(--navy);
+}
+
+.primary-tech:hover {
+  background:
+    linear-gradient(145deg, rgba(11, 31, 58, 0.98), rgba(14, 70, 126, 0.94)),
     var(--navy);
 }
 
@@ -396,11 +423,22 @@ h2 {
   flex-direction: column;
 }
 
-.product-card > span {
+.product-card > span,
+.card-link {
   margin-top: auto;
   color: var(--blue);
   font-size: 13px;
   font-weight: 800;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-link::after {
+  content: ">";
 }
 
 .product-icon {
@@ -482,7 +520,7 @@ h2 {
   gap: 14px;
 }
 
-.scenario-list div {
+.scenario-list a {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -603,12 +641,18 @@ h2 {
 }
 
 .detail-grid article,
+.detail-grid a,
 .scenario-page-grid article {
   min-height: 310px;
   padding: 30px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.78);
+}
+
+.detail-grid a {
+  display: flex;
+  flex-direction: column;
 }
 
 .detail-grid h3 {
@@ -693,9 +737,49 @@ h2 {
   white-space: nowrap;
 }
 
+.inline-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.cta-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin: 0 6vw 92px;
+  padding: 34px;
+  border: 1px solid rgba(30, 140, 255, 0.18);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 90% 20%, rgba(126, 231, 255, 0.18), transparent 30%),
+    rgba(255, 255, 255, 0.84);
+  box-shadow: 0 22px 60px rgba(11, 31, 58, 0.08);
+}
+
+.cta-strip h2 {
+  margin-bottom: 10px;
+  font-size: clamp(28px, 3vw, 42px);
+}
+
+.cta-strip p:not(.eyebrow) {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.75;
+}
+
 .scenario-page-grid article {
   position: relative;
   overflow: hidden;
+}
+
+.scenario-page-grid .card-link {
+  position: relative;
+  z-index: 1;
+  margin-top: 24px;
 }
 
 .scenario-page-grid article::after {
@@ -826,6 +910,13 @@ h2 {
     grid-template-columns: 1fr;
   }
 
+  .cta-strip {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-right: 5vw;
+    margin-left: 5vw;
+  }
+
   .page-hero,
   .product-page-hero {
     min-height: auto;
@@ -918,6 +1009,15 @@ h2 {
     flex-direction: column;
   }
 
+  .inline-actions {
+    flex-direction: column;
+  }
+
+  .inline-actions a,
+  .cta-strip a {
+    width: 100%;
+  }
+
   .hero-visual {
     min-height: 0;
   }
@@ -936,7 +1036,7 @@ h2 {
     padding: 72px 5vw;
   }
 
-  .scenario-list div,
+  .scenario-list a,
   .footer {
     align-items: flex-start;
     flex-direction: column;
