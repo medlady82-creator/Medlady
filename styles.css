@@ -435,6 +435,12 @@ h2 {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  width: fit-content;
+  min-height: 36px;
+  padding: 0 14px;
+  border: 1px solid rgba(30, 140, 255, 0.22);
+  border-radius: 6px;
+  background: rgba(232, 247, 255, 0.68);
 }
 
 .card-link::after {
@@ -516,19 +522,28 @@ h2 {
 
 .scenario-list {
   display: grid;
-  gap: 14px;
+  gap: 16px;
 }
 
 .scenario-list a {
-  display: flex;
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr) auto;
+  gap: 10px 18px;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  min-height: 86px;
-  padding: 0 26px;
+  min-height: 120px;
+  padding: 14px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #fff;
+}
+
+.scenario-list img {
+  grid-row: 1 / 3;
+  width: 100%;
+  height: 92px;
+  border-radius: 6px;
+  object-fit: cover;
+  filter: saturate(1.02) contrast(1.01);
 }
 
 .scenario-list strong {
@@ -538,6 +553,25 @@ h2 {
 
 .scenario-list span {
   color: var(--muted);
+  line-height: 1.65;
+}
+
+.scenario-list em {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 34px;
+  grid-row: 1 / 3;
+  grid-column: 3;
+  padding: 0 13px;
+  color: var(--blue);
+  border: 1px solid rgba(30, 140, 255, 0.22);
+  border-radius: 6px;
+  background: rgba(232, 247, 255, 0.68);
+  font-style: normal;
+  font-size: 13px;
+  font-weight: 800;
 }
 
 .footer {
@@ -773,6 +807,17 @@ h2 {
 .scenario-page-grid article {
   position: relative;
   overflow: hidden;
+}
+
+.scenario-page-grid article > img {
+  position: relative;
+  z-index: 1;
+  width: calc(100% + 60px);
+  height: 168px;
+  margin: -30px -30px 26px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(220, 231, 242, 0.8);
+  filter: saturate(1.02) contrast(1.01);
 }
 
 .scenario-page-grid .card-link {
@@ -1039,5 +1084,20 @@ h2 {
   .footer {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .scenario-list a {
+    grid-template-columns: 1fr;
+  }
+
+  .scenario-list img,
+  .scenario-list em {
+    grid-row: auto;
+    grid-column: auto;
+  }
+
+  .scenario-list img {
+    height: auto;
+    aspect-ratio: 16 / 9;
   }
 }
