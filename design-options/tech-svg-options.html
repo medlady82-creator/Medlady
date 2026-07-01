@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>核心技术页 SVG 方案预览</title>
+    <style>
+      :root {
+        --navy: #0b1f3a;
+        --blue: #1e8cff;
+        --cyan: #7ee7ff;
+        --green: #2ecf8f;
+        --line: #dce7f2;
+        --muted: #637083;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--navy);
+        background: linear-gradient(180deg, #f7fbff, #eef7fd);
+        font-family:
+          Inter, "HarmonyOS Sans SC", "PingFang SC", "Microsoft YaHei", Arial,
+          sans-serif;
+      }
+
+      header {
+        padding: 48px 6vw 24px;
+      }
+
+      h1 {
+        margin: 0 0 10px;
+        font-size: clamp(32px, 4vw, 56px);
+        line-height: 1.1;
+      }
+
+      header p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 18px;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+        padding: 24px 6vw 72px;
+      }
+
+      article {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.88);
+        box-shadow: 0 18px 50px rgba(11, 31, 58, 0.06);
+      }
+
+      article svg {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background: #f7fbff;
+      }
+
+      .caption {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 18px 20px 20px;
+      }
+
+      .caption strong {
+        font-size: 20px;
+      }
+
+      .caption span {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      @media (max-width: 980px) {
+        main {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>核心技术页 SVG 方案预览</h1>
+      <p>从 10 个方向里选一个，我再替换到官网核心技术页首屏。</p>
+    </header>
+    <main>
+      <article>
+        <svg viewBox="0 0 1600 900" role="img" aria-label="方案 1 柔性足底压力云图">
+          <defs>
+            <linearGradient id="bg1" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#f8fcff" />
+              <stop offset="0.56" stop-color="#eaf8ff" />
+              <stop offset="1" stop-color="#dff4ff" />
+            </linearGradient>
+            <radialGradient id="hot1" cx="52%" cy="55%" r="56%">
+              <stop offset="0" stop-color="#2ecf8f" stop-opacity="0.9" />
+              <stop offset="0.28" stop-color="#7ee7ff" stop-opacity="0.65" />
+              <stop offset="0.62" stop-color="#1e8cff" stop-opacity="0.2" />
+              <stop offset="1" stop-color="#1e8cff" stop-opacity="0" />
+            </radialGradient>
+            <filter id="glow1">
+              <feGaussianBlur stdDeviation="8" result="b" />
+              <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
+            </filter>
+          </defs>
+          <rect width="1600" height="900" fill="url(#bg1)" />
+          <path d="M0 690 C300 610 485 790 790 700 C1090 612 1270 470 1600 560 L1600 900 L0 900 Z" fill="#fff" opacity="0.58" />
+          <g opacity="0.22" stroke="#8ecfff" stroke-width="2">
+            <path d="M110 690 C360 560 520 765 820 650 S1280 520 1530 590" fill="none" />
+            <path d="M70 745 C350 600 530 810 850 700 S1250 580 1570 650" fill="none" />
+            <path d="M140 800 C400 660 570 825 865 750 S1250 650 1520 720" fill="none" />
+          </g>
+          <g transform="translate(640 122) rotate(8)">
+            <path d="M155 54 C267 36 376 126 399 263 C430 447 326 668 176 681 C58 692 -7 599 19 475 C37 388 82 342 77 262 C71 165 58 70 155 54 Z" fill="#f8fbff" stroke="#b9ddff" stroke-width="5" />
+            <path d="M160 92 C244 82 333 151 350 265 C375 427 290 623 178 637 C90 649 42 574 61 479 C79 393 121 356 115 266 C110 183 88 102 160 92 Z" fill="url(#hot1)" />
+            <g fill="#1e8cff" filter="url(#glow1)">
+              <circle cx="160" cy="180" r="12" />
+              <circle cx="230" cy="246" r="13" />
+              <circle cx="286" cy="344" r="12" />
+              <circle cx="238" cy="470" r="15" />
+              <circle cx="154" cy="555" r="12" />
+            </g>
+            <g stroke="#7ee7ff" stroke-width="3" opacity="0.75">
+              <path d="M160 180 L230 246 L286 344 L238 470 L154 555" fill="none" />
+              <path d="M125 315 C200 292 274 306 338 357" fill="none" />
+            </g>
+          </g>
+          <g transform="translate(230 210)" opacity="0.92">
+            <rect width="360" height="240" rx="18" fill="#0b1f3a" opacity="0.9" />
+            <path d="M34 178 L84 126 L132 151 L198 86 L268 112 L326 58" fill="none" stroke="#7ee7ff" stroke-width="6" />
+            <g fill="#2ecf8f"><circle cx="84" cy="126" r="8" /><circle cx="198" cy="86" r="8" /><circle cx="326" cy="58" r="8" /></g>
+          </g>
+        </svg>
+        <div class="caption"><strong>01 足底压力云图</strong><span>最直观表达柔性传感和压力采集</span></div>
+      </article>
+
+      <article>
+        <svg viewBox="0 0 1600 900" role="img" aria-label="方案 2 柔性传感薄膜">
+          <defs>
+            <linearGradient id="bg2" x1="0" x2="1"><stop offset="0" stop-color="#f7fbff" /><stop offset="1" stop-color="#e2f7ff" /></linearGradient>
+            <linearGradient id="film2" x1="0" x2="1"><stop offset="0" stop-color="#d8f6ff" stop-opacity="0.3" /><stop offset="0.52" stop-color="#7ee7ff" stop-opacity="0.52" /><stop offset="1" stop-color="#ffffff" stop-opacity="0.42" /></linearGradient>
+            <filter id="glow2"><feGaussianBlur stdDeviation="7" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
+          </defs>
+          <rect width="1600" height="900" fill="url(#bg2)" />
+          <path d="M-20 676 C250 560 430 730 680 655 C910 586 1070 430 1620 470 L1620 900 L-20 900 Z" fill="#fff" opacity="0.62" />
+          <g transform="translate(210 210)">
+            <path d="M40 240 C230 72 416 72 610 216 C812 366 1007 372 1240 178 L1320 260 C1060 520 776 505 540 340 C356 210 220 220 94 352 Z" fill="url(#film2)" stroke="#91dfff" stroke-width="3" />
+            <path d="M72 270 C235 145 400 135 575 260 C800 418 1010 405 1268 220" fill="none" stroke="#1e8cff" stroke-width="4" opacity="0.45" />
+            <path d="M134 336 C270 244 396 230 540 326 C774 480 996 472 1215 315" fill="none" stroke="#7ee7ff" stroke-width="3" opacity="0.55" />
+            <g fill="#ffffff" stroke="#1e8cff" stroke-width="4" filter="url(#glow2)">
+              <circle cx="218" cy="220" r="19" /><circle cx="385" cy="222" r="19" /><circle cx="578" cy="322" r="19" />
+              <circle cx="786" cy="386" r="19" /><circle cx="1018" cy="350" r="19" /><circle cx="1215" cy="244" r="19" />
+            </g>
+            <g stroke="#2ecf8f" stroke-width="2" opacity="0.7">
+              <path d="M218 220 L385 222 L578 322 L786 386 L1018 350 L1215 244" fill="none" />
+            </g>
+          </g>
+          <g transform="translate(980 150)" opacity="0.84">
+            <rect width="330" height="210" rx="20" fill="#ffffff" stroke="#cfe7fb" />
+            <path d="M42 148 C92 88 136 128 188 72 S276 106 294 46" fill="none" stroke="#1e8cff" stroke-width="7" />
+            <path d="M42 168 H292" stroke="#dce7f2" stroke-width="4" />
+          </g>
+        </svg>
+        <div class="caption"><strong>02 柔性传感薄膜</strong><span>强调柔软贴合与多点采集</span></div>
+      </article>
+
+      <article>
+        <svg viewBox="0 0 1600 900" role="img" aria-label="方案 3 步态数据走廊">
+          <defs>
+            <linearGradient id="bg3" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fbfdff" /><stop offset="1" stop-color="#e2f6ff" /></linearGradient>
+            <filter id="glow3"><feGaussianBlur stdDeviation="9" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
+          </defs>
+          <rect width="1600" height="900" fill="url(#bg3)" />
+          <g opacity="0.32" stroke="#7ee7ff">
+            <path d="M0 680 H1600" /><path d="M200 180 L470 680" /><path d="M600 120 L720 680" /><path d="M1020 120 L890 680" /><path d="M1430 180 L1150 680" />
+            <path d="M300 300 H1300" /><path d="M170 470 H1430" />
+          </g>
+          <g transform="translate(265 245)" filter="url(#glow3)">
+            <path d="M150 232 C222 195 292 202 348 240" fill="none" stroke="#1e8cff" stroke-width="7" stroke-linecap="round" />
+            <path d="M416 338 C495 298 570 315 626 362" fill="none" stroke="#2ecf8f" stroke-width="7" stroke-linecap="round" />
+            <path d="M704 242 C782 205 845 216 900 260" fill="none" stroke="#1e8cff" stroke-width="7" stroke-linecap="round" />
+            <path d="M990 345 C1062 312 1137 319 1195 366" fill="none" stroke="#2ecf8f" stroke-width="7" stroke-linecap="round" />
+            <g fill="#ffffff" stroke="#93d8ff" stroke-width="4">
+              <ellipse cx="150" cy="232" rx="82" ry="34" transform="rotate(-10 150 232)" />
+              <ellipse cx="416" cy="338" rx="82" ry="34" transform="rotate(12 416 338)" />
+              <ellipse cx="704" cy="242" rx="82" ry="34" transform="rotate(-10 704 242)" />
+              <ellipse cx="990" cy="345" rx="82" ry="34" transform="rotate(12 990 345)" />
+            </g>
+          </g>
+          <g transform="translate(550 92)">
+            <rect width="500" height="150" rx="18" fill="#ffffff" opacity="0.88" stroke="#d5eaf8" />
+            <path d="M45 100 H95 V62 H145 V86 H195 V40 H245 V78 H295 V54 H345 V92 H455" fill="none" stroke="#1e8cff" stroke-width="6" />
+          </g>
+        </svg>
+        <div class="caption"><strong>03 步态数据走廊</strong><span>突出姿态、步态和连续训练轨迹</span></div>
+      </article>
+
+      <article>
+        <svg viewBox="0 0 1600 900" role="img" aria-label="方案 4 康复数据闭环">
+          <defs>
+            <linearGradient id="bg4" x1="0" x2="1"><stop offset="0" stop-color="#f7fbff" /><stop offset="1" stop-color="#e8f9ff" /></linearGradient>
+            <filter id="glow4"><feGaussianBlur stdDeviation="10" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
+          </defs>
+          <rect width="1600" height="900" fill="url(#bg4)" />
+          <circle cx="800" cy="450" r="250" fill="none" stroke="#d4efff" stroke-width="52" />
+          <path d="M800 200 A250 250 0 0 1 1030 548" fill="none" stroke="#1e8cff" stroke-width="54" stroke-linecap="round" opacity="0.72" />
+          <path d="M583 576 A250 250 0 0 1 693 225" fill="none" stroke="#2ecf8f" stroke-width="54" stroke-linecap="round" opacity="0.62" />
+          <g filter="url(#glow4)">
+            <circle cx="800" cy="450" r="135" fill="#ffffff" stroke="#bfe5ff" stroke-width="3" />
+            <path d="M748 404 C805 366 890 388 910 458 C930 530 868 588 794 576 C719 564 676 486 714 425" fill="#f2fbff" stroke="#1e8cff" stroke-width="4" />
+            <path d="M758 486 C818 446 862 474 906 438" fill="none" stroke="#2ecf8f" stroke-width="5" />
+            <circle cx="758" cy="486" r="10" fill="#1e8cff" /><circle cx="830" cy="462" r="10" fill="#7ee7ff" /><circle cx="906" cy="438" r="10" fill="#2ecf8f" />
+          </g>
+          <g fill="#ffffff" stroke="#cae8fb" stroke-width="3">
+            <rect x="246" y="340" width="245" height="128" rx="18" /><rect x="1108" y="328" width="245" height="128" rx="18" /><rect x="672" y="682" width="256" height="118" rx="18" />
+          </g>
+          <g stroke="#7ee7ff" stroke-width="5" opacity="0.72">
+            <path d="M310 420 H444" /><path d="M1170 404 H1304" /><path d="M730 744 H870" />
+          </g>
+        </svg>
+        <div class="caption"><strong>04 康复数据闭环</strong><span>适合强调采集、反馈、评估闭环</span></div>
+      </article>
+
+      <article>
+        <svg viewBox="0 0 1600 900" role="img" aria-label="方案 5 智能足踝支具传感">
+          <defs>
+            <linearGradient id="bg5" x1="0" x2="1"><stop offset="0" stop-color="#f8fcff" /><stop offset="1" stop-color="#e2f7ff" /></linearGradient>
+            <linearGradient id="brace5" x1="0" x2="1"><stop offset="0" stop-color="#ffffff" /><stop offset="1" stop-color="#dceeff" /></linearGradient>
+            <filter id="glow5"><feGaussianBlur stdDeviation="7" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
+          </defs>
+          <rect width="1600" height="900" fill="url(#bg5)" />
+          <g opacity="0.22" stroke="#7ee7ff" stroke-width="2">
+            <path d="M1120 130 L1360 250 L1304 510 L1468 690" fill="none" />
+            <circle cx="1120" cy="130" r="7" /><circle cx="1360" cy="250" r="7" /><circle cx="1304" cy="510" r="7" /><circle cx="1468" cy="690" r="7" />
+          </g>
+          <g transform="translate(610 110)">
+            <path d="M210 20 C328 30 395 115 386 240 L360 612 C356 680 315 720 246 720 L112 720 C46 720 8 682 19 616 L63 350 C76 275 45 218 55 144 C65 65 120 12 210 20 Z" fill="url(#brace5)" stroke="#bfdff6" stroke-width="5" />
+            <path d="M88 138 H354" stroke="#ffffff" stroke-width="42" stroke-linecap="round" />
+            <path d="M75 352 H348" stroke="#ffffff" stroke-width="42" stroke-linecap="round" />
+            <path d="M42 642 C122 674 250 668 350 616" fill="none" stroke="#1e8cff" stroke-width="24" opacity="0.82" />
+            <g filter="url(#glow5)" fill="#1e8cff">
+              <circle cx="304" cy="104" r="28" /><circle cx="266" cy="290" r="10" /><circle cx="224" cy="434" r="10" /><circle cx="178" cy="560" r="10" />
+            </g>
+            <path d="M304 104 L266 290 L224 434 L178 560" fill="none" stroke="#7ee7ff" stroke-width="4" opacity="0.82" />
+          </g>
+          <g transform="translate(210 258)">
+            <rect width="320" height="220" rx="20" fill="#0b1f3a" opacity="0.88" />
+            <path d="M52 150 C100 104 146 124 196 84 S256 72 292 112" fill="none" stroke="#7ee7ff" stroke-width="7" />
+            <circle cx="196" cy="84" r="9" fill="#2ecf8f" />
+          </g>
+        </svg>
+        <div class="caption"><strong>05 足踝支具传感</strong><span>更贴近产品和足踝支撑场景</span></div>
+      </article>
+
+      <article>
+        <svg viewBox="0 0 1600 900" role="img" aria-label="方案 6 数字孪生人体运动">
+          <defs>
+            <linearGradient id="bg6" x1="0" x2="1"><stop offset="0" stop-color="#f9fdff" /><stop offset="1" stop-color="#e4f7ff" /></linearGradient>
+            <filter id="glow6"><feGaussianBlur stdDeviation="8" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
+          </defs>
+          <rect width="1600" height="900" fill="url(#bg6)" />
+          <g transform="translate(720 148)" stroke="#0b1f3a" stroke-width="12" stroke-linecap="round" fill="none" opacity="0.82">
+            <circle cx="120" cy="58" r="42" fill="#ffffff" stroke="#cae8fb" />
+            <path d="M120 104 V255" />
+            <path d="M120 150 L52 236" /><path d="M120 150 L205 236" />
+            <path d="M120 255 L58 430" /><path d="M120 255 L198 430" />
+          </g>
+          <g filter="url(#glow6)">
+            <circle cx="840" cy="402" r="14" fill="#1e8cff" /><circle cx="778" cy="578" r="14" fill="#2ecf8f" /><circle cx="918" cy="578" r="14" fill="#7ee7ff" />
+            <path d="M840 402 L778 578 L918 578 Z" fill="none" stroke="#7ee7ff" stroke-width="4" />
+          </g>
+          <g opacity="0.2" stroke="#1e8cff">
+            <ellipse cx="850" cy="490" rx="370" ry="250" fill="none" />
+            <ellipse cx="850" cy="490" rx="510" ry="340" fill="none" />
+            <path d="M330 690 C590 560 742 720 1020 610 S1330 520 1510 610" fill="none" />
+          </g>
+          <g transform="translate(165 220)">
+            <rect width="405" height="260" rx="22" fill="#ffffff" opacity="0.9" stroke="#d5eaf8" />
+            <path d="M48 190 H354" stroke="#dce7f2" stroke-width="4" />
+            <path d="M52 150 L104 114 L152 132 L206 74 L275 104 L344 52" fill="none" stroke="#1e8cff" stroke-width="7" />
+          </g>
+          <g transform="translate(1120 250)">
+            <rect width="300" height="210" rx="22" fill="#0b1f3a" opacity="0.88" />
+            <ellipse cx="112" cy="106" rx="42" ry="72" fill="#7ee7ff" opacity="0.32" />
+            <ellipse cx="190" cy="106" rx="42" ry="72" fill="#2ecf8f" opacity="0.28" />
+          </g>
+        </svg>
+        <div class="caption"><strong>06 数字孪生运动</strong><span>突出人体运动、姿态和数据映射</span></div>
+      </article>
+
+      <article>
+        <svg viewBox="0 0 1600 900" role="img" aria-label="方案 7 芯片到训练系统">
+          <defs>
+            <linearGradient id="bg7" x1="0" x2="1"><stop offset="0" stop-color="#f7fbff" /><stop offset="1" stop-color="#e7f9ff" /></linearGradient>
+            <filter id="glow7"><feGaussianBlur stdDeviation="8" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
+          </defs>
+          <rect width="1600" height="900" fill="url(#bg7)" />
+          <g transform="translate(548 218)" filter="url(#glow7)">
+            <rect x="0" y="0" width="505" height="360" rx="44" fill="#ffffff" stroke="#bde5ff" stroke-width="5" />
+            <rect x="124" y="80" width="258" height="196" rx="24" fill="#0b1f3a" />
+            <rect x="168" y="122" width="170" height="112" rx="16" fill="#12345c" stroke="#1e8cff" stroke-width="4" />
+            <g stroke="#7ee7ff" stroke-width="5">
+              <path d="M124 122 H45" /><path d="M124 178 H45" /><path d="M124 234 H45" />
+              <path d="M382 122 H460" /><path d="M382 178 H460" /><path d="M382 234 H460" />
+              <path d="M204 80 V20" /><path d="M252 80 V20" /><path d="M300 80 V20" />
+              <path d="M204 276 V340" /><path d="M252 276 V340" /><path d="M300 276 V340" />
+            </g>
+            <circle cx="252" cy="178" r="30" fill="#1e8cff" opacity="0.75" />
+          </g>
+          <g opacity="0.25" stroke="#1e8cff" stroke-width="3">
+            <path d="M225 678 C420 555 540 680 800 620 C1050 562 1195 460 1410 510" fill="none" />
+            <path d="M300 510 L548 396" /><path d="M1053 396 L1320 275" />
+          </g>
+          <g fill="#ffffff" stroke="#cfe7fb" stroke-width="3">
+            <rect x="145" y="520" width="300" height="150" rx="20" />
+            <rect x="1160" y="176" width="300" height="150" rx="20" />
+          </g>
+          <path d="M190 612 C244 560 298 588 360 540" fill="none" stroke="#1e8cff" stroke-width="7" />
+          <path d="M1210 268 H1410" stroke="#7ee7ff" stroke-width="7" />
+        </svg>
+        <div class="caption"><strong>07 传感芯片平台</strong><span>偏技术底座，适合更“平台化”的表达</span></div>
+      </article>
+
+      <article>
+        <svg viewBox="0 0 1600 900" role="img" aria-label="方案 8 压力数据仪表盘">
+          <defs>
+            <linearGradient id="bg8" x1="0" x2="1"><stop offset="0" stop-color="#f9fdff" /><stop offset="1" stop-color="#e1f7ff" /></linearGradient>
+          </defs>
+          <rect width="1600" height="900" fill="url(#bg8)" />
+          <g transform="translate(250 155)">
+            <rect width="1100" height="590" rx="36" fill="#ffffff" stroke="#cfe7fb" stroke-width="4" />
+            <rect x="44" y="48" width="1012" height="494" rx="24" fill="#0b1f3a" opacity="0.92" />
+            <g transform="translate(92 92)">
+              <path d="M0 360 H420" stroke="#274767" stroke-width="3" />
+              <path d="M10 305 L70 260 L130 286 L205 190 L278 222 L350 120 L414 150" fill="none" stroke="#7ee7ff" stroke-width="7" />
+              <g fill="#2ecf8f"><circle cx="70" cy="260" r="8" /><circle cx="205" cy="190" r="8" /><circle cx="350" cy="120" r="8" /></g>
+            </g>
+            <g transform="translate(590 100)">
+              <ellipse cx="112" cy="190" rx="64" ry="124" fill="#7ee7ff" opacity="0.18" />
+              <ellipse cx="112" cy="160" rx="38" ry="50" fill="#2ecf8f" opacity="0.45" />
+              <ellipse cx="238" cy="190" rx="64" ry="124" fill="#7ee7ff" opacity="0.18" />
+              <ellipse cx="238" cy="235" rx="38" ry="50" fill="#1e8cff" opacity="0.45" />
+              <g stroke="#7ee7ff" stroke-width="2" opacity="0.4">
+                <path d="M40 360 H310" /><path d="M40 318 H310" /><path d="M40 276 H310" />
+              </g>
+            </g>
+            <g transform="translate(94 480)" fill="#1e8cff" opacity="0.68">
+              <rect x="0" y="-72" width="24" height="72" /><rect x="48" y="-108" width="24" height="108" /><rect x="96" y="-48" width="24" height="48" />
+              <rect x="144" y="-132" width="24" height="132" /><rect x="192" y="-92" width="24" height="92" /><rect x="240" y="-152" width="24" height="152" />
+            </g>
+          </g>
+        </svg>
+        <div class="caption"><strong>08 数据仪表盘</strong><span>强化可视化反馈和训练报告</span></div>
+      </article>
+
+      <article>
+        <svg viewBox="0 0 1600 900" role="img" aria-label="方案 9 穿戴鞋垫传感矩阵">
+          <defs>
+            <linearGradient id="bg9" x1="0" x2="1"><stop offset="0" stop-color="#f8fcff" /><stop offset="1" stop-color="#e1f7ff" /></linearGradient>
+            <filter id="glow9"><feGaussianBlur stdDeviation="9" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
+          </defs>
+          <rect width="1600" height="900" fill="url(#bg9)" />
+          <g transform="translate(410 120)">
+            <path d="M288 34 C438 50 560 160 608 315 C666 502 592 688 434 732 C260 780 96 657 60 460 C28 280 116 104 288 34 Z" fill="#ffffff" stroke="#c8e8ff" stroke-width="5" />
+            <path d="M310 108 C426 130 510 220 545 342 C589 495 530 638 420 672 C296 710 180 610 150 458 C124 322 184 160 310 108 Z" fill="#effaff" />
+            <g filter="url(#glow9)">
+              <circle cx="302" cy="220" r="18" fill="#1e8cff" /><circle cx="392" cy="278" r="18" fill="#7ee7ff" />
+              <circle cx="450" cy="395" r="20" fill="#2ecf8f" /><circle cx="384" cy="518" r="20" fill="#1e8cff" />
+              <circle cx="270" cy="570" r="17" fill="#7ee7ff" />
+            </g>
+            <g stroke="#7ee7ff" stroke-width="3" opacity="0.72">
+              <path d="M302 220 L392 278 L450 395 L384 518 L270 570" fill="none" />
+              <path d="M210 350 C310 310 430 330 520 420" fill="none" />
+            </g>
+          </g>
+          <g opacity="0.22" stroke="#1e8cff">
+            <path d="M120 690 C360 590 540 750 805 660 S1210 545 1480 620" fill="none" />
+            <path d="M200 745 C420 640 585 790 840 710 S1190 610 1420 680" fill="none" />
+          </g>
+        </svg>
+        <div class="caption"><strong>09 鞋垫传感矩阵</strong><span>更聚焦柔性传感单元和足底受力</span></div>
+      </article>
+
+      <article>
+        <svg viewBox="0 0 1600 900" role="img" aria-label="方案 10 产品与数据云">
+          <defs>
+            <linearGradient id="bg10" x1="0" x2="1"><stop offset="0" stop-color="#f7fbff" /><stop offset="1" stop-color="#e5f8ff" /></linearGradient>
+            <filter id="glow10"><feGaussianBlur stdDeviation="10" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
+          </defs>
+          <rect width="1600" height="900" fill="url(#bg10)" />
+          <g opacity="0.24" stroke="#7ee7ff" stroke-width="2">
+            <path d="M180 600 C430 450 610 660 815 520 S1160 388 1440 480" fill="none" />
+            <path d="M250 680 C510 530 670 710 900 590 S1240 500 1510 580" fill="none" />
+          </g>
+          <g transform="translate(240 215)" filter="url(#glow10)">
+            <rect x="0" y="0" width="315" height="230" rx="26" fill="#ffffff" stroke="#cce8fb" stroke-width="4" />
+            <path d="M48 166 L96 118 L146 138 L204 82 L270 112" fill="none" stroke="#1e8cff" stroke-width="7" />
+          </g>
+          <g transform="translate(650 160)" filter="url(#glow10)">
+            <path d="M0 325 C80 160 210 62 388 72 C548 82 670 190 740 330 C610 454 474 510 316 488 C180 469 76 414 0 325 Z" fill="#ffffff" stroke="#bfe5ff" stroke-width="5" />
+            <path d="M150 310 C245 238 388 238 500 318" fill="none" stroke="#1e8cff" stroke-width="6" opacity="0.72" />
+            <g fill="#2ecf8f">
+              <circle cx="210" cy="292" r="12" /><circle cx="325" cy="265" r="12" /><circle cx="452" cy="296" r="12" />
+            </g>
+          </g>
+          <g transform="translate(1080 500)">
+            <rect width="270" height="165" rx="22" fill="#0b1f3a" opacity="0.9" />
+            <ellipse cx="95" cy="84" rx="40" ry="66" fill="#7ee7ff" opacity="0.28" />
+            <ellipse cx="174" cy="84" rx="40" ry="66" fill="#2ecf8f" opacity="0.22" />
+          </g>
+          <g stroke="#7ee7ff" stroke-width="4" opacity="0.62">
+            <path d="M555 330 C650 300 690 308 755 340" fill="none" />
+            <path d="M990 528 C1050 560 1068 580 1080 596" fill="none" />
+          </g>
+        </svg>
+        <div class="caption"><strong>10 产品与数据云</strong><span>产品、训练和云端数据连接感更强</span></div>
+      </article>
+    </main>
+  </body>
+</html>
